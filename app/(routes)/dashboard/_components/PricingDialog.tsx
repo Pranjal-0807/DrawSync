@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import Constant from "@/app/_constant/Constant";
 import {
   DialogClose,
   DialogContent,
@@ -7,8 +9,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import Link from "next/link";
-import Constant from "@/app/_constant/Constant";
 function PricingDialog() {
   return (
     <DialogContent className="max-w-4xl">
@@ -205,8 +205,7 @@ function PricingDialog() {
                     </svg>
 
                     <span className="text-gray-700">
-                      {" "}
-                      {Constant.MAX_FREE_FILE} Team files{" "}
+                      {Constant.MAX_FREE_FILE} Team files
                     </span>
                   </li>
 
@@ -272,12 +271,12 @@ function PricingDialog() {
                   </li>
                 </ul>
 
-                <a
+                <Link
                   href="#"
                   className="mt-8 block rounded-full border border-indigo-600 bg-white px-12 py-3 text-center text-sm font-medium text-indigo-600 hover:ring-1 hover:ring-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
                 >
                   Get Started
-                </a>
+                </Link>
               </div>
             </div>
           </div>

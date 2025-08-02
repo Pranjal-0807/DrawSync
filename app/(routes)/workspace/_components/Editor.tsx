@@ -1,5 +1,6 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+
+import { toast } from 'sonner';
 import EditorJS from '@editorjs/editorjs';
 // @ts-ignore
 import Header from '@editorjs/header';
@@ -13,28 +14,11 @@ import Paragraph from '@editorjs/paragraph';
 import Warning from '@editorjs/warning';
 import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
-import { toast } from 'sonner';
+import React, { useEffect, useRef, useState } from 'react'
 import { FILE } from '../../dashboard/_components/FileList';
+import { rawDocument } from '@/app/_constant/Constant';
 
-const rawDocument={
-    "time" : 1550476186479,
-    "blocks" : [{
-        data:{
-            text:'Document Name',
-            level:2
-        },
-        id:"123",
-        type:'header'
-    },
-    {
-        data:{
-            level:4
-        },
-        id:"1234",
-        type:'header'
-    }],
-    "version" : "2.8.1"
-}
+
 function Editor({onSaveTrigger,fileId,fileData}:{onSaveTrigger:any,fileId:any,fileData:FILE}) {
     const ref=useRef<EditorJS>();
     const updateDocument=useMutation(api.files.updateDocument);

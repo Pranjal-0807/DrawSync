@@ -1,11 +1,11 @@
 "use client";
 
-import { api } from "@/convex/_generated/api";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
-import { useConvex, useMutation } from "convex/react";
 import React, { useEffect } from "react";
-import Header from "./_components/Header";
+import { api } from "@/convex/_generated/api";
 import FileList from "./_components/FileList";
+import { useConvex, useMutation } from "convex/react";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+
 function Dashboard() {
   const convex = useConvex();
   const { user }: any = useKindeBrowserClient();
@@ -31,8 +31,6 @@ function Dashboard() {
   };
   return (
     <div className="p-8">
-      <Header />
-
       <FileList />
     </div>
   );
